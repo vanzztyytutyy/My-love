@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Untuk Aurelia Natasia 💖</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive;
+      background: linear-gradient(135deg, #ffe6f0, #ffccdd);
+      color: #ff4d88;
+      overflow-x: hidden;
+      text-align: center;
+      font-weight: bold;
+      cursor: url('https://cur.cursors-4u.net/others/oth-1/oth36.cur'), auto;
+      animation: fadeIn 2s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-top: 30px;
+      animation: pulse 2s infinite alternate;
+    }
+
+    @keyframes pulse {
+      from { text-shadow: 0 0 10px #ff99cc; transform: scale(1); }
+      to { text-shadow: 0 0 20px #ff3399; transform: scale(1.05); }
+    }
+
+    .love-text {
+      font-size: 2em;
+      color: #ff1493;
+      margin: 20px 0;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #ff99cc, 0 0 20px #ff66b2;
+      }
+      to {
+        text-shadow: 0 0 20px #ff3399, 0 0 30px #ff66cc;
+      }
+    }
+
+    nav {
+      margin: 20px auto;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .menu-btn {
+      background: #fff0f5;
+      border: 2px dashed #ff69b4;
+      padding: 15px 25px;
+      border-radius: 30px;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: transform 0.4s ease;
+      box-shadow: 0 0 10px #ff99cc;
+      position: relative;
+    }
+
+    .menu-btn:hover {
+      transform: scale(1.1);
+    }
+
+    .menu-btn:active {
+      animation: spin 0.8s linear;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg) scale(1); }
+      100% { transform: rotate(360deg) scale(1); }
+    }
+
+    .image-container {
+      margin: 20px auto;
+      width: 300px;
+      height: auto;
+      transition: transform 0.5s ease;
+    }
+
+    .image-container img {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 0 20px pink;
+      cursor: pointer;
+    }
+
+    .spin {
+      animation: spinImage 1s linear;
+    }
+
+    @keyframes spinImage {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    #suratRahasia, #pesanCinta, #alasanCinta {
+      margin-top: 20px;
+      background-color: #ffeef5;
+      border: 2px dotted #ff69b4;
+      padding: 20px;
+      border-radius: 20px;
+      width: 80%;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      display: none;
+      font-size: 1em;
+      color: #d63384;
+      box-shadow: 0 0 15px #ffb3d9;
+      text-align: left;
+      white-space: pre-wrap;
+    }
+
+    #alasanCinta ul {
+      padding-left: 20px;
+    }
+
+    .glitter {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background: url('https://media.giphy.com/media/l0MYOUI5XfRkLZ1ni/giphy.gif') repeat;
+      opacity: 0.2;
+      z-index: 0;
+    }
+  </style>
+</head>
+<body>
+<div class="glitter"></div>
+
+  <h1>Untuk Kamu, Aurelia Natasia 💕</h1>
+
+  <div class="image-container" onclick="rotateImage(this)">
+    <img src="ikan-hiu-ahayyy.jpg" alt="Gambar lucu AHAYYY" id="funnyImage">
+  </div>
+
+  <div class="love-text">I LOVE YOU SO MUCH!!!! 💖💖💖</div>
+
+  <nav>
+    <button class="menu-btn" onclick="bukaPesan(this)">💌 Pesan Cinta</button>
+    <button class="menu-btn" onclick="rotate(this)">🍰 Kenangan Manis</button>
+    <button class="menu-btn" onclick="bukaSurat(this)">✉️ Surat Rahasia</button>
+    <button class="menu-btn" onclick="bukaAlasan(this)">💗 200 Alasan Suka Kamu</button>
+  </nav>
+
+  <div id="pesanCinta">
+good afternoon cintaku, how are you today? ...
+(i love you 🤍)
+  </div>
+
+  <div id="suratRahasia">
+haloo aku memang bukan yg terbaik tapi aku udh effort buat kamu,  
+💖 LOVE YOU SO MUCH AUREL 💖
+  </div>
+
+  <div id="alasanCinta">
+    <h2 style="color: #ff1493;">200 Alasan Aku Suka Kamu 💘</h2>
+    <ul>
+      <li>1. Karena kamu selalu bikin aku tersenyum.</li>
+      <li>2. Karena tatapan kamu menenangkan.</li>
+      <li>3. Karena kamu sabar banget ngadepin aku.</li>
+      <li>4. Karena kamu perhatian sama hal-hal kecil.</li>
+      <li>5. Karena suara kamu bikin hati adem.</li>
+      <li>... hingga 200</li>
+      <li>200. Karena kamu satu-satunya yang bikin aku seserius ini dalam mencintai. 💘</li>
+    </ul>
+  </div>
+
+  <script>
+    function rotate(el) {
+      el.style.animation = "spin 0.8s linear";
+      setTimeout(() => { el.style.animation = ""; }, 800);
+    }
+
+    function bukaSurat(el) {
+      rotate(el);
+      document.getElementById("suratRahasia").style.display = "block";
+      document.getElementById("pesanCinta").style.display = "none";
+      document.getElementById("alasanCinta").style.display = "none";
+    }
+
+    function bukaPesan(el) {
+      rotate(el);
+      document.getElementById("pesanCinta").style.display = "block";
+      document.getElementById("suratRahasia").style.display = "none";
+      document.getElementById("alasanCinta").style.display = "none";
+    }
+
+    function bukaAlasan(el) {
+      rotate(el);
+      document.getElementById("alasanCinta").style.display = "block";
+      document.getElementById("suratRahasia").style.display = "none";
+      document.getElementById("pesanCinta").style.display = "none";
+    }
+
+    function rotateImage(el) {
+      const img = el.querySelector("img");
+      img.classList.add("spin");
+      setTimeout(() => { img.classList.remove("spin"); }, 1000);
+    }
+  </script>
+
+</body>
+</html>
